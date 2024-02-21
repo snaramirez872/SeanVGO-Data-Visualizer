@@ -1,8 +1,9 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
+import matplotlib.pyplot as plt
 
-cred = credentials.Certificate("../service-account.json")
+cred = credentials.Certificate("./service-account.json")
 firebase_admin.initialize_app(cred)
 
 # Fetching Data
@@ -28,13 +29,11 @@ def getDocs(collection):
 
 
 # Utility
-    
 genres = {}
-developers = {}
 platforms = {}
 
 def optimizeInfo(data):
-    importantKeys = ["developer", "genre", "platform"]
+    importantKeys = ["genre", "platform"]
 
     for dicts in data:
         for key, value in dicts.items():
@@ -43,8 +42,6 @@ def optimizeInfo(data):
                     addorIncrementDict(value, platforms)
                 elif (key == importantKeys[1]):
                     multiHandling(value, genres)
-                elif (key == importantKeys[0]):
-                    multiHandling(value, developers)
 
 def addorIncrementDict(key, dictionary):
     if (key in dictionary):
@@ -73,6 +70,42 @@ def setYAxis(dictionary):
     for key, value in dictionary.items():
         y_axis.append(value)
     return y_axis
+
+# Make Plots
+def makePlots(x_data, y_data, y_label, filename):
+    # Spacing
+    plt.figure(figsize=(23, 22))
+    plt.subplots_adjust(top=0.95)
+
+    # The Actual Plot
+    plt.bar(x_data, y_data)
+    plt.ylabel(y_label, fontsize=18, labelpad=20)
+
+    plt.xticks(rotation=47, ha='right', fontsize=16)
+    plt.yticks(fontsize=16)
+
+    # To Image
+    savePlots(filename)
+
+# Save the Plots as Images
+def savePlots(filename):
+    if (collName == "games-list"):
+        plt.savefig(f"./graphs/admin-user/{filename}.png")
+    elif (collName == "user-game-list"):
+        plt.savefig(f"./graphs/test-user/{filename}.png")
+
+# Data Study Function
+def dataStudy():
+    globYLabel = "Number of Games"
+    # Genres
+    genreX = setXAxis(genres)
+    genreY = setYAxis(genres)
+    makePlots(genreX, genreY, globYLabel, "genre-graph")
+
+    # Platforms
+    platsX = setXAxis(platforms)
+    platsY = setYAxis(platforms)
+    makePlots(platsX, platsY, globYLabel, "plats-graph")
 
 
 # User Inputs
@@ -108,11 +141,6 @@ while True:
 print(f"Fetching data from \'{collName}\'...")
 getDocs(collName)
 
-
-# Data Study
-genreX = setXAxis(genres)
-genreY = setYAxis(genres)
-devsX = setXAxis(developers)
-devsY = setYAxis(developers)
-platsX = setXAxis(platforms)
-platsY = setYAxis(platforms)
+print("Making Graphs...")
+dataStudy()
+print("All Processes Done!")
