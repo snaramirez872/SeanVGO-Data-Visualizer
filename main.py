@@ -38,9 +38,9 @@ def optimizeInfo(data):
     for dicts in data:
         for key, value in dicts.items():
             if (key in importantKeys):
-                if (key == importantKeys[2]):
+                if (key == importantKeys[1]):
                     addorIncrementDict(value, platforms)
-                elif (key == importantKeys[1]):
+                elif (key == importantKeys[0]):
                     multiHandling(value, genres)
 
 def addorIncrementDict(key, dictionary):
