@@ -88,9 +88,9 @@ class SeanVGODataVisualizer:
     # Save the Plots as Images
     def savePlots(self, filename):
         if (self.collectionName == "games-list"):
-            plt.savefig(f"./graphs/admin-user/{filename}.png")
+            plt.savefig(f"./src/assets/graphs/admin-user/{filename}.png")
         elif (self.collectionName == "user-game-list"):
-            plt.savefig(f"./graphs/test-user/{filename}.png")
+            plt.savefig(f"./src/assets/graphs/test-user/{filename}.png")
 
     # Data Study Function
     def dataStudy(self):
