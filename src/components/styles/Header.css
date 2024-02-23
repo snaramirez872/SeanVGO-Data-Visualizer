@@ -1,0 +1,60 @@
+.Header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--nav-height);
+    background: linear-gradient(
+        90deg,
+        var(--background-color) 15%,
+        rgb(0,0,0) 76%
+    );
+}
+
+.Header .logo {
+    cursor: default;
+    padding-left: 30px;
+    margin-right: 67%;
+    font-size: 3.5vh;
+    background-clip: text;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-image: linear-gradient(
+        90deg,
+        var(--color-One) 0%,
+        var(--color-Two) 53%,
+        var(--color-Three) 75%
+    );
+}
+
+.Header a {
+    text-decoration: none;
+    float: right;
+    padding-right: 30px;
+}
+
+.vgo-btn {
+    border-radius: 1vh;
+    background-color: var(--color-Three);
+    color: black;
+    font-size: 2.5vh;
+    padding: 0.5vh 2vh;
+}
+
+.vgo-btn:hover {
+    border-radius: 5vh;
+    color: white;
+}
+
+@media screen and (max-width: 1024px) {
+    .vgo-btn {
+        display: none;
+    }
+
+    .Header .logo {
+        font-size: 30px;
+        margin-right: 0;
+    }
+}
