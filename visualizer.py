@@ -62,11 +62,15 @@ class SeanVGODataVisualizer:
 
     # For later visualizations
     def setXAxis(self, dictionary):
-        x_axis = [key for key in dictionary]
+        x_axis = []
+        for key, values in dictionary.items():
+            x_axis.append(key)
         return x_axis
 
     def setYAxis(self, dictionary):
-        y_axis = [value for value in dictionary]
+        y_axis = []
+        for key, values in dictionary.items():
+            y_axis.append(values)
         return y_axis
 
     # Make Plots
