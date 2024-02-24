@@ -1,0 +1,12 @@
+.graph-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.graph-container img {
+    margin-top: 30px;
+    width: 750px;
+}

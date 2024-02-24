@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/GraphContainer.css";
 
 export default function GraphContainers({children}) {
     return (

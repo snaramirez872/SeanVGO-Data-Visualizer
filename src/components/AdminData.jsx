@@ -11,7 +11,7 @@ export default function AdminData() {
                 <img src={AdminGenres} alt="" />
             </GraphContainers>
             <GraphContainers>
-                <h2>Platforms</h2>
+                <h2 className="platforms">Platforms</h2>
                 <img src={AdminPlats} alt="" />
             </GraphContainers>
         </div>

@@ -5,6 +5,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
 
   --nav-height: 10vh;
   --color-One: rgb(255, 203, 106);

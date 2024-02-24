@@ -11,7 +11,7 @@ export default function DemoData() {
                 <img src={DemoGenres} alt="" />
             </GraphContainers>
             <GraphContainers>
-                <h2>Platforms</h2>
+                <h2 className="platforms">Platforms</h2>
                 <img src={DemoPlats} alt="" />
             </GraphContainers>
         </div>

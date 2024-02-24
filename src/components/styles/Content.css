@@ -1,0 +1,39 @@
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.user-options {
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+    display: flex;
+    gap: 2vh;
+}
+
+#user-btns {
+    font-size: 25px;
+    padding: 0.5vh 5vh;
+    border-radius: 1vh;
+    border: 1px solid var(--color-Three);
+    background-color: var(--color-Three);
+}
+
+#user-btns:hover {
+    cursor: pointer;
+    padding: 0.5vh 2.5vh;
+    border-radius: 3vh;
+    color: white;
+}
+
+#user-btns.active {
+    padding: 0.5vh 2.5vh;
+    border-radius: 3vh;
+    color: white;
+}
+
+.user-graphs {
+    color: white;
+    margin-bottom: 150px;
+}

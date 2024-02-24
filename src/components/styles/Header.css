@@ -14,7 +14,7 @@
     cursor: default;
     padding-left: 30px;
     margin-right: 67%;
-    font-size: 3.5vh;
+    font-size: 35px;
     background-clip: text;
     background-size: 100%;
     -webkit-background-clip: text;
@@ -39,7 +39,7 @@
     border-radius: 1vh;
     background-color: var(--color-Three);
     color: black;
-    font-size: 2.5vh;
+    font-size: 25px;
     padding: 0.5vh 2vh;
 }
 
